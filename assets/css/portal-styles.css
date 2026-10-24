@@ -1,0 +1,617 @@
+:root {
+    /* ============================================== */
+    /* PALET BARU: BIRU TUA & KUNING SOFT GOLD */
+    /* ============================================== */
+    
+    /* Biru Tua (Primary/Aksen Utama) - Deep Navy */
+    --color-primary: #0D47A1; 
+    
+    /* Kuning Soft Gold (Accent/Aksen Mewah) - Gold yang tidak terlalu terang */
+    --color-accent: #FBC02D; 
+    
+    /* Biru Pucat (Secondary/Basis Latar) - Untuk border/latar soft */
+    --color-secondary: #B3E5FC; 
+    
+    /* Warna teks dan latar belakang default lainnya */
+    --color-text-normal: #333333; 
+    --bg-body: #F5F5F5; /* Abu-abu Dingin Paling Terang */
+    --color-background-light: #f9fafb; /* Latar belakang terang untuk area reveal */
+    --reveal-height: 180px; /* TINGGI PERMANEN AREA REVEAL */
+    
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-text-normal);
+    background-color: var(--bg-body);
+    overflow-x: hidden;
+    padding-top: 70px;
+}
+
+/* Navbar Background: Glass Effect */
+.glass-effect { 
+    background: rgba(255, 255, 255, 0.9); 
+    backdrop-filter: blur(10px); 
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
+    /* Garis bawah biru muda (soft) */
+    border-bottom: 3px solid var(--color-secondary); 
+}
+
+/* BRAND LOGO: Sederhana & Animasi */
+.navbar-brand-custom {
+    color: var(--color-primary) !important; /* Biru Tua */
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+.navbar-brand-custom:hover {
+    color: var(--color-accent) !important; /* Kuning Soft Gold saat hover */
+}
+
+/* Icon (Rumah/Landmark): Tambah Animasi Lucu */
+.navbar-brand-icon {
+    font-size: 1.8rem;
+    color: var(--color-primary); /* Biru Tua */
+    animation: icon-float 3s ease-in-out infinite;
+}
+@keyframes icon-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+/* Teks Navigasi Akses Pengguna */
+.nav-link-text {
+    font-size: 0.95rem;
+    color: var(--color-text-normal);
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    transition: color 0.3s ease;
+}
+.nav-link-text:hover {
+    color: var(--color-primary); /* Biru Tua */
+}
+
+/* TOMBOL AKses PENGELOLA (Gaya Glass-Bubble) */
+.btn-akses-pengelola {
+    background-color: var(--color-secondary); /* Biru Sangat Muda */
+    color: var(--color-primary); /* Teks Biru Tua */
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.9rem;
+    
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    border: 2px solid rgba(255, 255, 255, 0.5); 
+
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-akses-pengelola:hover {
+    background-color: var(--color-accent); /* Kuning Soft Gold saat hover */
+    color: white; /* Teks Putih agar kontras */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
+    transform: translateY(-2px) scale(1.02);
+}
+
+/* Tombol di Card */
+.btn-elegant { 
+    /* FIX: Gunakan Biru Tua sebagai background default */
+    background-color: var(--color-primary) !important; 
+    color: white !important; /* Teks Putih harus selalu terlihat */
+    
+    border-radius: 50px;
+    transition: all 0.3s ease; 
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none;
+    padding: 10px 18px; /* Pastikan ukurannya pas */
+}
+/* Jangan lupakan efek hover-nya */
+.btn-elegant:hover { 
+    /* FIX: Gunakan Kuning Soft Gold yang cerah saat hover */
+    background-color: var(--color-accent) !important; 
+    color: var(--color-primary) !important; /* Teks Biru Tua di atas Kuning */
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+    
+/* ========================================= */
+/* HERO SECTION - REVISI TAMPILAN DRAMATIS & PARALLAX */
+/* ========================================= */
+.hero {
+    background-image: url('../img/bg2.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed;
+    
+    color: white; 
+    text-align: center;
+    padding: 400px 30px 300px; 
+    position: relative; 
+    overflow: hidden;
+    min-height: 80vh;
+}
+
+/* Overlay Hitam */
+.hero::before { 
+    content: ''; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(0, 0, 0, 0.8); 
+    z-index: 0; 
+}
+
+/* Judul Utama (H1) */
+.hero h1 { 
+    font-family: 'Playfair Display', serif; 
+    font-size: 4.5rem; 
+    color: var(--color-accent); /* Kuning Soft Gold */
+    text-shadow: 0 0 10px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.6); 
+    position: relative; 
+    z-index: 1; 
+}
+/* Paragraf Deskripsi: Diperjelas dan diberi jarak */
+.hero p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 25px;
+    
+    text-shadow: 0 0 5px rgba(0,0,0,0.9); 
+    position: relative; 
+    z-index: 1;
+    letter-spacing: 0.5px; 
+}
+
+/* Elemen lain yang harus di atas overlay */
+.hero .hero-logo,
+.hero .btn,
+.hero .fa-globe-asia { 
+    position: relative; 
+    z-index: 1; 
+}
+.container-main { margin-top: -50px; } 
+
+/* ========================================= */
+/* PEMBATAS GARIS/PERSEGI PANJANG (REVISI) */
+/* ========================================= */
+.section-divider {
+    position: relative;
+    z-index: 2;
+    margin: 40px auto 30px;
+    padding: 15px 40px; 
+    max-width: 500px;
+    text-align: center;
+    
+    /* GAYA NEUMORPHISM LEMBUT / POP-OUT */
+    background: linear-gradient(145deg, #ffffff, #f0f0f0); 
+    border-radius: 50px; 
+    
+    /* Bayangan timbul */
+    box-shadow: 
+        5px 5px 15px rgba(0, 0, 0, 0.1), 
+        -5px -5px 15px rgba(255, 255, 255, 0.8), 
+        0 0 0 4px var(--color-secondary); /* Border Biru Muda yang tebal */
+    
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+/* Animasi Ikon Kecil */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.bounce-icon {
+    color: var(--color-accent); /* Kuning Soft Gold */
+    animation: bounce 2s infinite ease-in-out; 
+}
+
+.section-divider h2 {
+    margin: 0;
+    color: var(--color-primary); /* Biru Tua */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); 
+    font-weight: 700;
+}
+
+/* PENGATURAN TEKS DESKRIPSI DI BAWAH JUDUL */
+.text-muted[data-aos="fade-up"] { 
+    color: #555 !important; 
+    font-size: 1.1rem;
+}
+    
+    
+/* ========================================= */
+/* CARD STYLE DAN EFEK REVEAL (KONTEN NAIK) */
+/* ========================================= */
+
+.card-custom { 
+    position: relative;
+    overflow: hidden; 
+    border-radius: 25px; 
+    min-height: 600px;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+    box-shadow 0.4s ease; 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); 
+    border: none; 
+    cursor: pointer;
+
+    background: url('../img/batik2.jpg') center center / cover !important; 
+    background-size: cover;
+    background-position: center;
+}
+
+/* OVERLAY TRANSPARAN */
+.card-custom::before {
+    content: ''; 
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    /* Tetap hitam agar teks putih kontras di atas gambar latar */
+    background-color: rgba(0, 0, 0, 0.6); 
+    z-index: 0; 
+    border-radius: 25px;
+}
+
+
+/* Card Body */
+.card-body { 
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    text-align: center; 
+    padding: 20px 30px 30px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    transition: all 0.4s ease; 
+}
+
+/* Konten Atas (Gambar + Judul) */
+.card-inner-content {
+    position: relative;
+    width: 100%;
+    background-color: transparent;
+    border-radius: 15px; 
+    padding: 20px 30px; 
+    margin-bottom: 20px; 
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Konten Bawah (Deskripsi + Tombol) */
+.card-detail-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 30px 30px; 
+    box-sizing: border-box;
+    
+    transition: opacity 0.3s ease-in 0.1s, max-height 0.5s ease-out 0.1s, visibility 0.5s 0.1s;
+    
+    color: var(--color-text-normal); 
+}
+
+/* Judul Card - Style Normal */
+.card-title { 
+    font-size: 1.8rem; 
+    font-family: 'Playfair Display', serif; 
+    color: white !important; /* Tetap Putih agar kontras */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    
+    margin-bottom: 0;
+    margin-top: 15px;
+    transition: color 0.3s ease;
+}
+
+/* Teks deskripsi - Style Normal */
+.card-text { 
+    font-size: 1.1rem; 
+    color: rgb(255, 255, 255); /* Tetap Putih */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+    margin-bottom: 20px; 
+    line-height: 1.5;
+}
+
+/* Gambar dalam Lingkaran */
+.img-circle-container { 
+     width: 150px; /* Ukuran lebih besar agar lingkaran lebih terlihat */
+    height: 150px;
+    border-radius: 50%;
+    padding: 0; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: white;
+    margin-bottom: 0;
+}
+.img-circle-container img {
+    width: 150px; height: 150px; object-fit: cover; border-radius: 50%; 
+    /* Border Biru Sangat Muda */
+    border: 5px solid var(--color-secondary); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s, border 0.3s;
+}
+    
+/* ========================================= */
+/* EFEK HOVER */
+/* ========================================= */
+
+.card-custom:hover { 
+    transform: translateY(-8px) scale(2.02); 
+    /* Border Luar Biru Sangat Muda saat hover */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2), 0 0 0 5px var(--color-secondary); 
+}
+    
+/* 1. SAAT HOVER: Konten Atas Bergerak ke atas */
+.card-custom:hover .card-inner-content {
+    transform: translateY(-60px); 
+}
+
+.card-custom:hover .card-body {
+    justify-content: flex-start; 
+    padding-top: 100px; 
+}
+
+/* 3. SAAT HOVER: Detail overlay muncul */
+.card-custom:hover .card-detail-overlay {
+    opacity: 4;
+    visibility: visible;
+    max-height: 300px;
+}
+
+/* Efek visual tambahan saat hover */
+.card-custom:hover .img-circle-container img { 
+    transform: scale(1.05) rotate(-3deg); 
+    /* Border berubah menjadi Kuning Soft Gold */
+    border: 5px solid var(--color-accent); 
+}
+
+/* ========================================= */
+/* 1. LAYOUT & WRAPPER (Grid Responsif) */
+/* ========================================= */
+
+.card-admin-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 30px; 
+    align-items: stretch; 
+    padding: 40px 20px;
+    max-width: 1400px; 
+    margin: 0 auto;
+
+}
+/* ========================================= */
+/* KARTU ADMIN: ADOPSI DESAIN USER (.card-custom) */
+/* (Tampilan Awal Putih, Reveal Putih, Teks Putih) */
+/* ========================================= */
+
+.card-admin {
+    position: relative;
+    /* BACKGROUND BATIK */
+    background: url('../img/batik2.jpg') center center / cover !important; 
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 25px; /* Radius dari kartu batik */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); 
+    border: none; /* Hapus border karena sudah ada batik */
+    
+    width: 100%;
+    min-height: 580px; 
+    overflow: hidden; 
+    cursor: default; /* Kursor standar */
+    text-decoration: none;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                box-shadow 0.4s ease;
+    
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    padding: 25px;
+    text-align: center;
+}
+
+/* OVERLAY HITAM TRANSPRAN (Seperti di kartu batik) */
+.card-admin::before { 
+    content: ''; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.6); /* Overlay hitam transparan */
+    z-index: 0; 
+    border-radius: 25px;
+}
+
+/* KONTEN UTAMA (Icon + Judul) */
+.card-admin-content {
+    position: relative;
+    z-index: 1; /* Di atas overlay */
+    width: 100%;
+    margin-bottom: 20px; 
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Icon Container (Gambar Bulat dengan Background Putih) */
+.card-admin-icon {
+    width: 150px; /* Ukuran lebih besar agar lingkaran lebih terlihat */
+    height: 150px;
+    border-radius: 50%; /* Bulat sempurna */
+    background-color: white; /* BACKGROUND PUTIH */
+    color: var(--color-primary); /* Warna ikon (jika font-awesome) */
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Shadow untuk menonjol */
+    transition: transform 0.3s ease;
+}
+.card-admin-icon img {
+    width: 90%; /* Gambar sedikit lebih kecil dari lingkaran */
+    height: 90%;
+    object-fit: cover;
+    border-radius: 50%; /* Gambar di dalam ikon juga bulat */
+}
+
+
+/* Judul Card (Warna Putih) */
+.card-title-admin {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: white; /* PERUBAHAN: Teks Judul PUTIH */
+    line-height: 1.3;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* ========================================= */
+/* DETAIL DESKRIPSI (AREA REVEAL PUTIH) */
+/* ========================================= */
+
+.card-admin-details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2; /* Di atas overlay tapi di bawah content saat muncul */
+    
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0; 
+    overflow: hidden;
+    
+    padding: 0 25px 25px; 
+    box-sizing: border-box;
+    
+    background: var(--color-background-light); /* PERUBAHAN: Latar belakang putih */
+    border-top: 3px solid var(--color-accent);
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+    
+    transition: opacity 0.3s ease-in 0.1s, max-height 0.6s ease-out 0.1s, visibility 0.6s 0.1s;
+    pointer-events: none;
+    text-align: center;
+}
+
+.card-admin-details p {
+    padding-top: 25px; 
+    color: var(--color-text-muted); /* PERUBAHAN: Teks Deskripsi tetep gelap di area putih */
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+/* Tombol Akses (Warna Tombol Standar) */
+.card-admin-button {
+    background-color: var(--color-primary); 
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.card-admin-button:hover {
+    background-color: var(--color-accent);
+    color: var(--color-primary); /* Teks kuning saat hover */
+}
+
+
+/* ========================================= */
+/* EFEK HOVER (ANIMASI SAMA) */
+/* ========================================= */
+
+.card-admin:hover { 
+    transform: translateY(-8px) scale(1.02); 
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); 
+}
+
+/* 1. Konten Utama Bergerak ke Atas */
+.card-admin:hover .card-admin-content {
+    transform: translateY(-120px); 
+}
+
+/* 2. Detail Deskripsi Muncul */
+.card-admin:hover .card-admin-details {
+    opacity: 1;
+    visibility: visible;
+    max-height: 300px; 
+    pointer-events: auto;
+}
+
+/* Hover tambahan pada Icon */
+.card-admin:hover .card-admin-icon {
+    transform: scale(1.05) rotate(-3deg);
+    /* Border berubah menjadi Kuning Soft Gold saat hover (opsional) */
+    /* border: 5px solid var(--color-accent); */ 
+}
+
+
+/* ========================================= */
+/* 4. MEDIA QUERIES (Responsif) */
+/* ========================================= */
+
+@media (max-width: 1200px) {
+    .card-admin-wrapper {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+@media (max-width: 992px) {
+    .card-admin-wrapper {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-admin-wrapper {
+        grid-template-columns: 1fr; 
+        padding: 20px 15px;
+    }
+}
+
+/* Footer */
+footer { 
+    background-color: var(--color-primary); /* Background Biru Tua */
+    color: white; 
+    padding: 40px 0 20px; 
+    border-top: 5px solid var(--color-accent); /* Garis atas Kuning Soft Gold */
+}
+footer .text-white-50 {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+footer .text-white-75 {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+footer a:hover {
+    color: var(--color-accent) !important; /* Kuning Soft Gold saat hover */
+}
